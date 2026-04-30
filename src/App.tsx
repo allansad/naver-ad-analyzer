@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { theme } from './theme';
 import { DataProvider } from './context/DataContext';
@@ -20,7 +20,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <DataProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<HomePage />} />
@@ -36,7 +36,7 @@ function App() {
               <Route path="/beyond-metrics" element={<BeyondMetricsPage />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </DataProvider>
     </ThemeProvider>
   );
